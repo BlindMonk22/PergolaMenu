@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <title>Impero Ardia</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100%;
+        }
+
+        /* HOMEPAGE CON SFONDO IMMAGINE */
+        .homepage {
+            background-image: url('pergola.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header-title {
+            padding: 40px 0 10px 0;
+            text-align: center;
+        }
+
+        .header-title h1 {
+            font-size: 2.8em;
+            margin: 0;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .homepage-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #d4af37;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffe4f3; /* rosa chiaro */
+            color: black;
+        }
+
+        /* MENU SECTION CON CORNICE DI FIORI 🌸 */
+        .menu-section {
+            position: relative;
+            padding: 60px 40px;
+            background-color: #fdf0ff;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1000px;
+            z-index: 1;
+        }
+
+        /* Cornice superiore */
+        .menu-section::before {
+            content: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸";
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            pointer-events: none;
+        }
+
+        /* Cornice inferiore */
+        .menu-section::after {
+            content: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸";
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            pointer-events: none;
+        }
+
+        /* Fiori laterali */
+        .menu-border-left,
+        .menu-border-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            font-size: 24px;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px 0;
+            white-space: nowrap;
+        }
+
+        .menu-border-left {
+            left: 10px;
+        }
+
+        .menu-border-right {
+            right: 10px;
+        }
+
+        .menu-border-left::before,
+        .menu-border-right::before {
+            content: "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸";
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .chef-description {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .dish-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .dish {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HOMEPAGE -->
+    <div class="homepage" id="homepage">
+        <header class="header-title">
+            <h1>Benvenuti nella nostra Pergola</h1>
+        </header>
+        <div class="homepage-content">
+            <button class="btn" onclick="showMenu()">Vedi il Menù</button>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="menu-section" id="menu" style="display:none;">
+        <div class="menu-border-left"></div>
+        <div class="menu-border-right"></div>
+
+        <h2>Il nostro menù per il compleanno di Pietro!!</h2>
+        <div class="chef-description">
+            <div style="font-family: 'Times New Roman', serif; text-align: justify;">
+                <p>
+                    In un mondo culinario in continua evoluzione, dove le mode vanno e vengono, la maestria e l’anima autentica di <strong>Nonna Anna</strong> brillano come una stella senza tempo. Con i suoi <strong>77 anni di esperienza e passione</strong>, questa straordinaria chef incarna l'eccellenza della tradizione gastronomica italiana, arricchita da un tocco personale di rara raffinatezza.
+                </p>
+                <p>
+                    Ogni piatto da lei concepito è molto più di una semplice preparazione: è un'opera d’arte, forgiata con cura meticolosa, amore profondo per le materie prime e un’intelligenza culinaria affinata nel corso di decenni. Le sue mani, esperte e pazienti, trasformano ingredienti umili in creazioni straordinarie che parlano al cuore prima ancora che al palato.
+                </p>
+                <p>
+                    <strong>Nonna Anna</strong>, con la sua grazia discreta e la sua instancabile dedizione, sa rendere ogni pasto un’esperienza intima e memorabile, capace di evocare ricordi d’infanzia e sensazioni autentiche. È nel silenzio delle sue cucine che nasce una cucina raffinata, genuina, semplicemente indimenticabile.
+                </p>
+            </div>
+
+            <hr style="width: 19cm; height: 2px; border: none; background-color: #333; margin: 20px 0 20px -0.2cm;">
+
+            <div style="font-family: 'Times New Roman', serif; text-align: justify;">
+                <p>
+                    Prima di accompagnarvi alla scoperta delle portate pensate per questa serata speciale, desideriamo rivolgere un sentito e affettuoso augurio a una persona che occupa un posto unico nei nostri cuori: <strong>il caro Pietro</strong>.
+                </p>
+                <p>
+                    Fratello premuroso, cugino sincero, amico fidato di tutti noi, Pietro è ammirato non solo per la sua gentilezza d’animo, ma per quelle qualità silenziose e profonde che lo rendono tanto speciale. La sua <strong>umiltà autentica</strong>, unita a <strong>virtù potenti</strong> come la lealtà, la generosità e la discrezione, fanno di lui un esempio silenzioso ma eloquente di ciò che significa essere davvero amati.
+                </p>
+                <p>
+                    A lui dedichiamo l’inizio di questa cena, come simbolo di affetto, stima e gratitudine.
+                </p>
+            </div>
+        </div>
+
+        <div class="dish-list">
+            <div class="dish"><strong>🍖 Antipasto di Terra:</strong><p> Selezione raffinata di Prosciutto San Daniele DOP, Mozzarella di Bufala Campana, Capicollo e Pancetta artigianale di Nonna Anna, accompagnata dalla dolce freschezza del Melone Giallo e dalla vellutata Stracciatella di Bufala.</p></div>
+            <div class="dish"><strong>🐟 Antipasto di Mare:</strong><p> Deliziosa composizione di Insalata di Mare, Cocktail di Gamberetti, Patè di Salmone e Polipetto al Forno con Olive e Alici Marinate, accompagnata da fragrante Frittella di Alghe.</p></div>
+            <div class="dish"><strong>🍝 Primo:</strong><p> Un raffinato tripudio di sapori con Cannelloni al Sugo, Polpettine di Scottona accompagnate da Piselli Primavera, e l'inimitabile Parmigiana di Melanzane al forno dello Chef.</p></div>
+            <div class="dish"><strong>🍰 Dolce:</strong><p> Il dessert si compone di una squisita torta alle ciliegie, leggera e profumata, accompagnata dalla torta sorpresa di Zio Gerardo, autentica espressione di tradizione e sapienza dolciaria.</p></div>
+            <div class="dish"><strong>🍒 Frutta:</strong><p>Anguria del Re dell’Agricola DO.GE. un frutto succoso e rinfrescante, coltivato con cura secondo i rigorosi standard DO.GE., che ne garantiscono qualità, dolcezza e genuinità. Perfetta per chi cerca un’esplosione di freschezza naturale in ogni boccone.</p></div>
+        </div>
+    </div>
+
+    <script>
+        function showMenu() {
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('menu').style.display = 'block';
+            history.pushState({ page: "menu" }, "Menù", "?menu");
+        }
+
+        window.onpopstate = function (event) {
+            if (event.state && event.state.page === "menu") {
+                document.getElementById('homepage').style.display = 'none';
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                document.getElementById('homepage').style.display = 'flex';
+                document.getElementById('menu').style.display = 'none';
+            }
+        };
+    </script>
+
+</body>
+</html>
+
